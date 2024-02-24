@@ -28,8 +28,8 @@ public class Climber extends SubsystemBase {
         new CANSparkMax( 
             ClimberConstants.CLIMBER_MOTOR_LEFT_CAN_ID, CANSparkMax.MotorType.kBrushless);
 
-     climberRightMotor.setInverted(ClimberConstants.CLIMBER_MOTOR_RIGHT_INVERTED);
-     climberLeftMotor.setInverted(ClimberConstants.CLIMBER_MOTOR_LEFT_INVERTED);
+    climberRightMotor.setInverted(ClimberConstants.CLIMBER_MOTOR_RIGHT_INVERTED);
+    climberLeftMotor.follow(climberRightMotor);
 
     // if (ClimberConstants.DO_TESTING) {
     //   setUpShuffleBoard();
@@ -44,18 +44,18 @@ public class Climber extends SubsystemBase {
 
   public void climberExtend() {
     climberRightMotor.set(ClimberConstants.CLIMBER_MOTOR_RIGHT_SPEED);
-    climberLeftMotor.set(ClimberConstants.CLIMBER_MOTOR_LEFT_SPEED);
+    // climberLeftMotor.set(ClimberConstants.CLIMBER_MOTOR_LEFT_SPEED);
 
   }
 
   public void climberRetract() {
     climberRightMotor.set(-1.0*ClimberConstants.CLIMBER_MOTOR_RIGHT_SPEED);
-    climberLeftMotor.set(-1.0*ClimberConstants.CLIMBER_MOTOR_LEFT_SPEED);
+    // climberLeftMotor.set(-1.0*ClimberConstants.CLIMBER_MOTOR_LEFT_SPEED);
   }
 
   public void stopClimber() {
     climberRightMotor.set(0);
-    climberLeftMotor.set(0);
+    // climberLeftMotor.set(0);
   }
 
   @Override
