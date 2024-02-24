@@ -15,8 +15,8 @@ public class ClimberConstants {
     public static final boolean CLIMBER_MOTOR_RIGHT_INVERTED = false;
     public static final boolean CLIMBER_MOTOR_LEFT_INVERTED = false;
 
-    public static final double CLIMBER_MOTOR_RIGHT_SPEED = 0.2;
-    public static final double CLIMBER_MOTOR_LEFT_SPEED = 0.2;
+    public static final double CLIMBER_MOTOR_RIGHT_SPEED = -0.2;
+    public static final double CLIMBER_MOTOR_LEFT_SPEED = -0.2;
 
     public static final double CLIMBER_MAX_HEIGHT_THRESHOLD = 10; // FIXME change to be realistic
 

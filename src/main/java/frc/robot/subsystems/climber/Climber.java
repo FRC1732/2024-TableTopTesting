@@ -44,13 +44,13 @@ public class Climber extends SubsystemBase {
 
   public void climberExtend() {
     climberRightMotor.set(ClimberConstants.CLIMBER_MOTOR_RIGHT_SPEED);
-    climberRightMotor.set(ClimberConstants.CLIMBER_MOTOR_LEFT_SPEED);
+    climberLeftMotor.set(ClimberConstants.CLIMBER_MOTOR_LEFT_SPEED);
 
   }
 
   public void climberRetract() {
-    climberRightMotor.set(-ClimberConstants.CLIMBER_MOTOR_RIGHT_SPEED);
-    climberRightMotor.set(-ClimberConstants.CLIMBER_MOTOR_LEFT_SPEED);
+    climberRightMotor.set(-1.0*ClimberConstants.CLIMBER_MOTOR_RIGHT_SPEED);
+    climberLeftMotor.set(-1.0*ClimberConstants.CLIMBER_MOTOR_LEFT_SPEED);
   }
 
   public void stopClimber() {

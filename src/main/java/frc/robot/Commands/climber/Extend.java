@@ -12,7 +12,7 @@ public class Extend extends Command {
   private final Climber climber;
   /** Creates a new Extend. */
   public Extend(Climber climber) {
-    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(climber);
    this.climber = climber;
   }
 
