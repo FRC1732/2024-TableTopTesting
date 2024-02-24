@@ -4,7 +4,6 @@
 
 package frc.robot.subsystems.climber;
 
-import com.revrobotics.CANSparkFlex;
 import com.revrobotics.CANSparkMax;
 
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
@@ -13,8 +12,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
 public class Climber extends SubsystemBase {
-  private CANSparkFlex climberRightMotor;
-  private CANSparkFlex climberLeftMotor;
+  private CANSparkMax climberRightMotor;
+  private CANSparkMax climberLeftMotor;
   
   private ShuffleboardTab climberTab;
  
@@ -23,22 +22,22 @@ public class Climber extends SubsystemBase {
   /** Creates a new Climber. */
   public Climber() {
     climberRightMotor =
-        new CANSparkFlex( 
+        new CANSparkMax( 
             ClimberConstants.CLIMBER_MOTOR_RIGHT_CAN_ID, CANSparkMax.MotorType.kBrushless);
     climberLeftMotor =
-        new CANSparkFlex( 
+        new CANSparkMax( 
             ClimberConstants.CLIMBER_MOTOR_LEFT_CAN_ID, CANSparkMax.MotorType.kBrushless);
 
-    climberRightMotor.setInverted(ClimberConstants.CLIMBER_MOTOR_RIGHT_INVERTED);
-    climberLeftMotor.setInverted(ClimberConstants.CLIMBER_MOTOR_LEFT_INVERTED);
+     climberRightMotor.setInverted(ClimberConstants.CLIMBER_MOTOR_RIGHT_INVERTED);
+     climberLeftMotor.setInverted(ClimberConstants.CLIMBER_MOTOR_LEFT_INVERTED);
 
-    if (ClimberConstants.DO_TESTING) {
-      setUpShuffleBoard();
-    }
+    // if (ClimberConstants.DO_TESTING) {
+    //   setUpShuffleBoard();
+    // }
   }
 
   public void setUpShuffleBoard() {
-    climberTab = Shuffleboard.getTab("Climber");
+    //climberTab = Shuffleboard.getTab("Climber");
     //FIXME add things here
     
   }
@@ -62,9 +61,9 @@ public class Climber extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    if (currentHeight > ClimberConstants.CLIMBER_MAX_HEIGHT_THRESHOLD) {
-      stopClimber();
-    }
+    // if (currentHeight > ClimberConstants.CLIMBER_MAX_HEIGHT_THRESHOLD) {
+    //   stopClimber();
+    // }
 
   }
 }

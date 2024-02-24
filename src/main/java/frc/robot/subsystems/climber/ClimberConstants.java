@@ -9,8 +9,8 @@ public class ClimberConstants {
     
     public static final boolean DO_TESTING = true; // setup shuffleboard and shuffleboard control of motors
 
-    public static final int CLIMBER_MOTOR_RIGHT_CAN_ID = 13; //FIXME change these to the correct values
-    public static final int CLIMBER_MOTOR_LEFT_CAN_ID = 0; 
+    public static final int CLIMBER_MOTOR_RIGHT_CAN_ID = 11; //FIXME change these to the correct values
+    public static final int CLIMBER_MOTOR_LEFT_CAN_ID = 10; 
 
     public static final boolean CLIMBER_MOTOR_RIGHT_INVERTED = false;
     public static final boolean CLIMBER_MOTOR_LEFT_INVERTED = false;
