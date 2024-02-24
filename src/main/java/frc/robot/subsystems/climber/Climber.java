@@ -17,6 +17,8 @@ public class Climber extends SubsystemBase {
   private CANSparkFlex climberLeftMotor;
   
   private ShuffleboardTab climberTab;
+ 
+  private double currentHeight = 0; //FIXME track this somewhere
 
   /** Creates a new Climber. */
   public Climber() {
@@ -60,6 +62,9 @@ public class Climber extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    if (currentHeight > ClimberConstants.CLIMBER_MAX_HEIGHT_THRESHOLD) {
+      stopClimber();
+    }
 
   }
 }
