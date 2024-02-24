@@ -13,6 +13,9 @@ public class ClimberConstants {
     public static final int CLIMBER_MOTOR_LEFT_CAN_ID = 0; 
 
     public static final boolean CLIMBER_MOTOR_RIGHT_INVERTED = false;
+    public static final boolean CLIMBER_MOTOR_LEFT_INVERTED = false;
 
-    public static final double CLIMBER_MOTOR_SPEED = 0.5;
+    public static final double CLIMBER_MOTOR_RIGHT_SPEED = 0.5;
+    public static final double CLIMBER_MOTOR_LEFT_SPEED = 0.5;
+
 }
