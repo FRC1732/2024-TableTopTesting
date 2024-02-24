@@ -6,12 +6,17 @@ package frc.robot.subsystems.climber;
 
 import com.revrobotics.CANSparkFlex;
 import com.revrobotics.CANSparkMax;
+
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
 public class Climber extends SubsystemBase {
   private CANSparkFlex climberRightMotor;
   private CANSparkFlex climberLeftMotor;
+  
+  private ShuffleboardTab climberTab;
 
   /** Creates a new Climber. */
   public Climber() {
@@ -23,11 +28,17 @@ public class Climber extends SubsystemBase {
             ClimberConstants.CLIMBER_MOTOR_LEFT_CAN_ID, CANSparkMax.MotorType.kBrushless);
 
     climberRightMotor.setInverted(ClimberConstants.CLIMBER_MOTOR_RIGHT_INVERTED);
-    climberLeftMotor.follow(climberRightMotor);
+    climberRightMotor.follow(climberLeftMotor);
 
     if (ClimberConstants.DO_TESTING) {
-     
+      setUpShuffleBoard();
     }
+  }
+
+  public void setUpShuffleBoard() {
+    climberTab = Shuffleboard.getTab("Climber");
+
+    
   }
 
   public void climberExtend() {
@@ -42,10 +53,9 @@ public class Climber extends SubsystemBase {
     climberRightMotor.set(0);
   }
 
-  
-
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+
   }
 }
